@@ -25,7 +25,7 @@
             "group": "Database Connections",
             "pages": [
               "database/oracle",
-              "database/postgres",
+              "database/sqlserver",
               "essentials/navigation"
             ]
           },
