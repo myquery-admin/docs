@@ -48,7 +48,11 @@
               "database/postgresql",
               "database/mongodb",
               "database/sqlite",
-              "database/mariadb"
+              "database/mariadb",
+              "database/ibm-db2",
+              "database/amazon-redshift",
+              "database/snowflake",
+              "database/bigquery"
             ]
           },
           {
