@@ -31,9 +31,9 @@
         }
       ]
     },
-    "dropdowns": [
+    "tabs": [
       {
-        "dropdown": "MyQuery Platform",
+        "tab": "MyQuery Platform",
         "icon": "files",
         "groups": [
           {
@@ -79,7 +79,7 @@
         ]
       },
       {
-        "dropdown": "Developers Portal",
+        "tab": "Developers Portal",
         "icon": "files",
         "groups": [
           {
