@@ -44,7 +44,7 @@
             "pages": [
               "database/oracle",
               "database/sql-server",
-              "database/sqlserver-copied-1",
+              "database/mysql",
               "essentials/navigation"
             ]
           },
