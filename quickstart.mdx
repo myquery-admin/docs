@@ -8,7 +8,8 @@ description: "Get started connecting your database on MyQuery in seconds"
 Follow the steps below to connect your database.
 
 ### Step 1: Define your schema name
-Enter the schema (or list of schemas) you want MyQuery to index.  
+
+Enter the schema (or list of schemas) you want MyQuery to index.\
 MyQuery reads metadata (tables, columns) to build the semantic layer; data is accessed only when you run a query.
 
 ### Step 2: Choose your database type
@@ -16,24 +17,38 @@ MyQuery reads metadata (tables, columns) to build the semantic layer; data is ac
 > MyQuery supports connecting to and managing data from **multiple database types**, including:
 
 <CardGroup cols={3}>
-  <Card title="Oracle" icon="database" href="/database/oracle"></Card>
-  <Card title="Postgres" icon="database" href="/database/sqlserver"></Card>
-  <Card title="SQL Server" icon="database" href="/database/sql-server"></Card>
-  <Card title="MySQL" icon="database" href="/database/mysql"></Card>
-  <Card title="MongoDB" icon="database" href="/database/mongodb"></Card>
-  <Card title="NoSQL" icon="database" href="/database/nosql"></Card>
+  <Card title="Oracle" icon="database" iconType="light" color="#cab5b5" horizontal href="/database/oracle">
+    
+  </Card>
+  <Card title="Postgres" icon="database" iconType="light" color="#c4aaaa" horizontal href="/database/sqlserver">
+    
+  </Card>
+  <Card title="SQL Server" icon="database" iconType="light" color="#cab5b5" horizontal href="/database/sql-server">
+    
+  </Card>
+  <Card title="MySQL" icon="database" iconType="light" color="#cab5b5" horizontal href="/database/mysql">
+    
+  </Card>
+  <Card title="MongoDB" icon="database" color="#cab5b5" horizontal href="/database/mongodb">
+    
+  </Card>
+  <Card title="NoSQL" icon="database" iconType="light" color="#cab5b5" horizontal href="/database/nosql">
+    
+  </Card>
 </CardGroup>
 
 ### Step 3: Connect your database
+
 Provide the required connection details:
 
-- **Host** and **Port**  
+- **Host** and **Port**\
   Defaults: Oracle `1521`, Postgres `5432`, SQL Server `1433`, MySQL `3306`, MongoDB `27017`.
 - **Database / Service / SID** (engine-specific)
 - **Username / Password** with **read-only** privileges (least-privilege recommended)
 - **SSL/TLS** (and wallet/cert files if your environment requires them)
 
 **Engine notes**
+
 - **Oracle:** Use Service Name or SID. Wallet/mTLS if applicable.
 - **Postgres:** Database name required; SSL recommended on public networks.
 - **SQL Server:** Specify encryption settings as required by your server policy.
@@ -41,11 +56,14 @@ Provide the required connection details:
 - **MongoDB:** Use standard or SRV URI format.
 
 <Note>
-  <strong>Firewall allowlist</strong><br/>
-  Add this IP to your database allowlist to ensure connectivity:<br/>
-  <code>62.171.190.236</code>
+  <strong>Firewall allowlist</strong>
+  \
+   Add this IP to your database allowlist to ensure connectivity:\
+   <code>
+  62.171.190.236</code>
 </Note>
 
 ### Step 4: Save Connection
-Click **Save** to test the connection and start schema sync.  
+
+Click **Save** to test the connection and start schema sync.\
 Upon success, you can begin querying and building dashboards.
