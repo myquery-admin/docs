@@ -45,6 +45,7 @@
               "database/oracle",
               "database/sql-server",
               "database/mysql",
+              "database/postgresql",
               "essentials/navigation"
             ]
           },
