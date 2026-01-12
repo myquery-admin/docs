@@ -30,7 +30,8 @@
     },
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "MyQuery.ai docs",
+        "icon": "files",
         "versions": [
           {
             "version": "Getting started",
