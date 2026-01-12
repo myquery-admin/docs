@@ -9,6 +9,25 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Try It Free",
+          "icon": "book-open-cover",
+          "href": "https://myquery.ai/register"
+        },
+        {
+          "anchor": "Blog",
+          "icon": "blog",
+          "href": "https://blog.myquery.ai"
+        },
+        {
+          "anchor": "Community",
+          "icon": "discord",
+          "href": "https://discord.gg/3kmWKxH4"
+        }
+      ]
+    },
     "tabs": [
       {
         "tab": "Guides",
@@ -17,8 +36,7 @@
             "group": "Getting started",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "quickstart"
             ]
           },
           {
@@ -48,26 +66,7 @@
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Try It Free",
-          "href": "https://myquery.ai/register",
-          "icon": "book-open-cover"
-        },
-                {
-          "anchor": "Blog",
-          "href": "https://blog.myquery.ai",
-          "icon": "blog"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://discord.gg/3kmWKxH4",
-          "icon": "discord"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/logo/light.png",
