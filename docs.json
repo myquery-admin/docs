@@ -31,16 +31,16 @@
     "tabs": [
       {
         "tab": "Guides",
-        "products": [
+        "versions": [
           {
-            "product": "Getting started",
+            "version": "Getting started",
             "pages": [
               "index",
               "quickstart"
             ]
           },
           {
-            "product": "Database Connections",
+            "version": "Database Connections",
             "pages": [
               "database/oracle",
               "database/sql-server",
@@ -56,7 +56,7 @@
             ]
           },
           {
-            "product": "Writing content",
+            "version": "Writing content",
             "pages": [
               "essentials/markdown",
               "essentials/code",
@@ -65,7 +65,7 @@
             ]
           },
           {
-            "product": "AI tools",
+            "version": "AI tools",
             "pages": [
               "ai-tools/cursor",
               "ai-tools/claude-code",
