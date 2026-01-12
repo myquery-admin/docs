@@ -47,7 +47,8 @@
               "database/mysql",
               "database/postgresql",
               "database/mongodb",
-              "essentials/navigation"
+              "database/sqlite",
+              "database/mariadb"
             ]
           },
           {
