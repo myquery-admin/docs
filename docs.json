@@ -7,7 +7,10 @@
      "dark": "#15803D",
     "light": "#07C983"
   },
-  "favicon": "/favicon.svg",
+  "favicon": {
+    "light": "/favicon.svg",
+    "dark": "/favicon.svg"
+  },
   "navigation": {
     "global": {
       "anchors": [
@@ -74,6 +77,52 @@
             ]
           }
         ]
+      },
+      {
+        "tab": "MyQuery.ai docs",
+        "icon": "files",
+        "versions": [
+          {
+            "version": "Getting started",
+            "pages": [
+              "index-copied-1",
+              "quickstart-copied-1"
+            ]
+          },
+          {
+            "version": "Database Connections",
+            "pages": [
+              "database/oracle-copied-1",
+              "database/sql-server-copied-1",
+              "database/mysql-copied-1",
+              "database/postgresql-copied-1",
+              "database/mongodb-copied-1",
+              "database/sqlite-copied-1",
+              "database/mariadb-copied-1",
+              "database/ibm-db2-copied-1",
+              "database/amazon-redshift-copied-1",
+              "database/snowflake-copied-1",
+              "database/bigquery-copied-1"
+            ]
+          },
+          {
+            "version": "Writing content",
+            "pages": [
+              "essentials/markdown-copied-1",
+              "essentials/code-copied-1",
+              "essentials/images-copied-1",
+              "essentials/reusable-snippets-copied-1"
+            ]
+          },
+          {
+            "version": "AI tools",
+            "pages": [
+              "ai-tools/cursor-copied-1",
+              "ai-tools/claude-code-copied-1",
+              "ai-tools/windsurf-copied-1"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -100,5 +149,9 @@
       "github": "https://github.com/MyQuery-AI",
       "linkedin": "https://www.linkedin.com/company/myqueryai"
     }
+  },
+  "description": "MyQuery.ai Agentic Analytics Platform  ",
+  "appearance": {
+    "default": "system"
   }
 }

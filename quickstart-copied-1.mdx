@@ -1,0 +1,115 @@
+---
+title: "Onboarding"
+description: "Get started connecting your database on MyQuery in seconds"
+---
+
+## Welcome to MyQuery
+
+Follow the steps below to connect your database.
+
+### Step 1: Define your schema name
+
+Enter the schema (or list of schemas) you want MyQuery to index.\
+MyQuery reads metadata (tables, columns) to build the semantic layer; data is accessed only when you run a query.
+
+### Step 2: Choose your database type
+
+> MyQuery supports connecting to and managing data from **multiple database types**, including:
+
+<CardGroup cols={4}>
+  <Card title="Oracle" icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" href="/database/oracle">
+    
+  </Card>
+  <Card title="SQL Server" icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" href="/database/sql-server">
+    
+  </Card>
+  <Card title="MySQL" icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" href="/database/mysql">
+    
+  </Card>
+  <Card title="PostgreSQL" icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" href="/database/postgresql">
+    
+  </Card>
+  <Card title="MongoDB" icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" href="/database/mongodb">
+    
+  </Card>
+  <Card title="SQLite" icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" href="/database/sqlite">
+    
+  </Card>
+  <Card title="MariaDB" icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mariadb/mariadb-original.svg" href="/database/mariadb">
+    
+  </Card>
+  <Card title="IBM Db2" icon="https://iconape.com/wp-content/files/so/352455/png/ibm-db2-logo.png" href="/database/ibm-db2">
+    
+  </Card>
+  <Card title="Amazon Redshift" icon="https://cdn.worldvectorlogo.com/logos/aws-redshift-logo.svg" href="/database/amazon-redshift">
+    
+  </Card>
+  <Card title="Snowflake" icon="https://www.vectorlogo.zone/logos/snowflake/snowflake-icon.svg" href="/database/snowflake">
+    
+  </Card>
+  <Card title="Google BigQuery" icon="https://www.vectorlogo.zone/logos/google_bigquery/google_bigquery-icon.svg" href="/database/bigquery">
+    
+  </Card>
+  <Card title="CockroachDB" icon="https://www.vectorlogo.zone/logos/cockroachlabs/cockroachlabs-icon.svg" href="/database/cockroachdb">
+    
+  </Card>
+  <Card title="Informix" icon="https://logodix.com/logo/1970541.png" href="/database/informix">
+    
+  </Card>
+  <Card title="Azure Synapse" icon="https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-icon.svg" href="/database/azure-synapse">
+    
+  </Card>
+  <Card title="Databricks SQL" icon="https://www.vectorlogo.zone/logos/databricks/databricks-icon.svg" href="/database/databricks">
+    
+  </Card>
+  <Card title="ClickHouse" icon="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/clickhouse/clickhouse-original.svg" href="/database/clickhouse">
+    
+  </Card>
+  <Card title="SingleStore" icon="https://avatars.githubusercontent.com/u/10183141?s=200&v=4" href="/database/singlestore">
+    
+  </Card>
+  <Card title="MotherDuck" icon="https://cdn.jsdelivr.net/gh/motherduck-real/motherduck-logo@main/logos/svg/motherduck-symbol.svg" href="/database/motherduck">
+    
+  </Card>
+  <Card title="Elasticsearch" icon="https://www.vectorlogo.zone/logos/elastic/elastic-icon.svg" href="/database/elasticsearch">
+    
+  </Card>
+  <Card title="Supabase" icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg" href="/database/supabase">
+    
+  </Card>
+  <Card title="DuckDB" icon="https://cdn.jsdelivr.net/gh/duckdb/duckdb@main/logo/duckdb_icon.svg" href="/database/duckdb">
+    
+  </Card>
+  <Card title="Google Sheets" icon="https://e7.pngegg.com/pngimages/718/112/png-clipart-google-docs-online-spreadsheet-google-analytics-google-rectangle-logo-thumbnail.png" href="/database/google-sheets">
+    
+  </Card>
+</CardGroup>
+
+### Step 3: Connect your database
+
+Provide the required connection details:
+
+- **Host** and **Port**\
+  Defaults: Oracle `1521`, Postgres `5432`, SQL Server `1433`, MySQL `3306`, MongoDB `27017`.
+- **Database / Service / SID** (engine-specific)
+- **Username / Password** with **read-only** privileges (least-privilege recommended)
+- **SSL/TLS** (and wallet/cert files if your environment requires them)
+
+**Engine notes**
+
+- **Oracle:** Use Service Name or SID. Wallet/mTLS if applicable.
+- **Postgres:** Database name required; SSL recommended on public networks.
+- **SQL Server:** Specify encryption settings as required by your server policy.
+- **MySQL:** Provide DB name; enable TLS if enforced.
+- **MongoDB:** Use standard or SRV URI format.
+
+<Note>
+  **Firewall allowlist**
+
+  Add this IP to your database allowlist to ensure connectivity: `62.171.190.236`
+</Note>
+
+### Step 4: Save Connection
+
+Click **Save** to test the connection and start schema sync.\
+Upon success, you can begin querying and building dashboards.
