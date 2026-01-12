@@ -43,7 +43,7 @@
             "group": "Database Connections",
             "pages": [
               "database/oracle",
-              "database/sqlserver",
+              "database/sql-server",
               "database/sqlserver-copied-1",
               "essentials/navigation"
             ]
