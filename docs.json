@@ -33,7 +33,7 @@
     },
     "tabs": [
       {
-        "tab": "MyQuery.ai docs",
+        "tab": "MyQuery Platform",
         "icon": "files",
         "versions": [
           {
@@ -79,7 +79,7 @@
         ]
       },
       {
-        "tab": "MyQuery.ai docs",
+        "tab": "Developers Portal",
         "icon": "files",
         "versions": [
           {
