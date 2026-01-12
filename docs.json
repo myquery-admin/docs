@@ -46,6 +46,7 @@
               "database/sql-server",
               "database/mysql",
               "database/postgresql",
+              "database/mongodb",
               "essentials/navigation"
             ]
           },
