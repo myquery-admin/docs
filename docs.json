@@ -35,16 +35,16 @@
       {
         "tab": "MyQuery Platform",
         "icon": "files",
-        "anchors": [
+        "dropdowns": [
           {
-            "anchor": "Getting started",
+            "dropdown": "Getting started",
             "pages": [
               "index",
               "quickstart"
             ]
           },
           {
-            "anchor": "Database Connections",
+            "dropdown": "Database Connections",
             "pages": [
               "database/oracle",
               "database/sql-server",
@@ -60,7 +60,7 @@
             ]
           },
           {
-            "anchor": "Writing content",
+            "dropdown": "Writing content",
             "pages": [
               "essentials/markdown",
               "essentials/code",
@@ -69,7 +69,7 @@
             ]
           },
           {
-            "anchor": "AI tools",
+            "dropdown": "AI tools",
             "pages": [
               "ai-tools/cursor",
               "ai-tools/claude-code",
