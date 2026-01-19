@@ -40,8 +40,8 @@
             "group": "Getting started",
             "pages": [
               "index",
-              "my-query-platform/getting-started/dashboard-builder",
-              "quickstart"
+              "quickstart",
+              "my-query-platform/getting-started/dashboard-builder"
             ]
           },
           {
