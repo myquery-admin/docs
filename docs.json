@@ -39,6 +39,7 @@
           {
             "group": "Getting started",
             "pages": [
+              "my-query-platform/getting-started/dashboard-builder",
               "index",
               "quickstart"
             ]
