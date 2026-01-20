@@ -1,0 +1,61 @@
+---
+title: "Data Sources"
+---
+
+## **1. Managing Database Connections**
+
+The main **Database** page lists all your active connections. From here, you can:
+
+- **Add New Connection:** Connect a new Data Source. The system will guide you through entering your credentials (Host, Port, User, Password).
+- **Security First:** MyQuery uses **schema-only** access. We never store your raw data on our servers; we only encrypt and store the "map" (schema) so the AI knows how to answer your questions.
+- **Edit Connections:** Update connection strings or rename your database display names if your infrastructure changes.
+- **Remove Data Sources:** Disconnect databases that are no longer needed.
+
+---
+
+## **2. Manage Tables: The Command Center**
+
+By selecting **Manage Tables** from any database card, you enter a specialized workspace for organizing your data.
+
+### **Schema Explorer (Sidebar)**
+
+On the left, you can quickly jump between different connected databases and browse all available tables. Click any table to open its detailed management view.
+
+### **Table Configuration (Header)**
+
+Once a table is selected, you can control its visibility and how the AI understands it:
+
+- **Table Status:** Toggle a table between **Active** and **Inactive**. Inactive tables are hidden from the AI Chat, keeping your workspace clean.
+- **AI Context (Description):** Click the **Edit** icon to provide a natural language description for the table (e.g., _"This table contains all customer transaction data since 2021"_). This significantly improves the AI's accuracy when answering questions.
+
+---
+
+## **3. Investigating Your Tables**
+
+The table management area features two powerful views to help you audit and understand your data:
+
+### **Columns View**
+
+This view shows the "blueprint" of your table:
+
+- **Schema Details:** View a list of every column, its data type (e.g., Integer, Varchar), and its current description.
+- **Searchable Toggle:** You can decide if specific columns should be "Searchable." Turning this on tells the AI that this column is important for filtering and finding records.
+- **Column Documentation:** Just like tables, you can edit descriptions for individual columns to clarify what specific fields mean (e.g., 
+
+### **Data View (Raw Interaction)**
+
+Need to see exactly what's inside the table? Switch to the **Data** tab for a high-performance spreadsheet experience:
+
+- **Live Preview:** Browse real rows from your database in real-time.
+- **Searching & Filtering:** Use the header search bar or the advanced **Filter** button to narrow down rows based on complex logic.
+- **Ordering:** Click any column header to sort the data instantly.
+- **Pagination:** Effortlessly navigate through large tables with millions of rows using the page controls at the bottom.
+- **Column Visibility:** Hide or show specific columns to focus only on the data points that matter to you.
+
+---
+
+## **Configuration Tips**
+
+- **Refresh Schema:** If you add a new column to your database, use the **Refresh** button in the Table Selector to update MyQuery’s map.
+- **Less is More:** Only activate the tables you actually need for your reports. This makes the AI faster and reduces the chance of ambiguous answers.
+- **M2M Tables:** Many-to-Many relationship tables are automatically detected and don't count against your plan's table limits!

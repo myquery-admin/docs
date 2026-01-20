@@ -39,10 +39,13 @@
           {
             "group": "Getting started",
             "pages": [
-              "my-query-platform/getting-started/report-builder",
               "index",
               "quickstart",
-              "my-query-platform/getting-started/dashboard-builder"
+              "my-query-platform/getting-started/report-builder",
+              "my-query-platform/getting-started/dashboard-builder",
+              "my-query-platform/getting-started/data-sources",
+              "my-query-platform/getting-started/activity",
+              "my-query-platform/getting-started/settings"
             ]
           },
           {
