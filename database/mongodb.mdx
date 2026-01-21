@@ -1,5 +1,35 @@
 ---
 title: "MongoDB"
-description: "Description of your new file."
-icon: "database"
+description: "Since MongoDB is document-based, My Query AI maps "Collections" as virtual tables."
 ---
+
+## **Security & Architecture Overview**
+
+Before connecting your data, it is critical to understand how MyQuery interacts with your infrastructure:
+
+- **Schema-Only Access:** MyQuery does **not** ingest or store your raw database records. We only read the metadata (table names, column types, and foreign key relationships) to build a semantic map for the AI.
+- **Encrypted Storage:** All connection credentials and "maps" are encrypted at rest using industry-standard AES-256 encryption.
+- **Whitelisting:** To allow MyQuery to reach your database, you must whitelist our outbound IP addresses in your firewall or cloud security groups (e.g., AWS Security Groups, Azure Firewall)
+
+### **Connection Method: URI String**
+
+MongoDB connections are handled exclusively via the official SRV or Standard connection string format.
+
+- **Field:** **Connection String**
+- **Format:**
+
+  ```
+  mongodb+srv://[user]:[password]@[host]/[database]?options
+  ```
+- **Example:**
+
+  ```
+  mongodb+srv://user:pass@cluster0.abcde.mongodb.net/analytics_db?retryWrites=true&w=majority
+  ```
+- **Security Tip:** Ensure your MongoDB user has the
+
+  ```
+  read
+  ```
+
+  role specifically on the database mentioned in the string.

@@ -1,7 +1,6 @@
 ---
-title: "SQLite"
-description: "SQLite is an embedded database. Unlike others, it does not run as a service but as a file."
-icon: "database"
+title: "CockroachDB"
+description: "CockroachDB is a distributed SQL database designed for global scalability. It is wire-compatible with PostgreSQL."
 ---
 
 ## **Security & Architecture Overview**
@@ -12,20 +11,28 @@ Before connecting your data, it is critical to understand how MyQuery interacts 
 - **Encrypted Storage:** All connection credentials and "maps" are encrypted at rest using industry-standard AES-256 encryption.
 - **Whitelisting:** To allow MyQuery to reach your database, you must whitelist our outbound IP addresses in your firewall or cloud security groups (e.g., AWS Security Groups, Azure Firewall).
 
-### **Connection Method: File Upload**
+### **Method A: Connection Parameters**
 
-- **Step 1:** Click the **Upload File** button.
-- **Step 2:** Select your 
-
-  ```
-  .sqlite
-  ```
-
-  or 
+- **Host (Required):** The cluster endpoint or node address.
+- **Port (Optional):** Default is
 
   ```
-  .db
+  26257
   ```
 
-  file.
-- **Process:** MyQuery creates a secure, temporary virtual volume to read the schema of the file. Once the schema is indexed, the file logic is maintained for query execution during your session.
+  .
+- **Database (Required):** The specific database within the cluster.
+- **Username/Password:** Standard SQL credentials.
+
+### **Method B: Connection String**
+
+- **Format:**
+
+  ```
+  postgresql://[user]:[password]@[host]:26257/[database]?sslmode=verify-full
+  ```
+- **Example:**
+
+  ```
+  postgresql://jane:pass123@my-cluster-1234.gcp-us-east1.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full
+  ```

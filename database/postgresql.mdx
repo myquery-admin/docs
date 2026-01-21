@@ -1,5 +1,39 @@
 ---
 title: "PostgreSQL"
-description: "Description of your new file."
+description: "PostgreSQL support includes advanced schema detection and SSL management for cloud providers like RDS, Supabase, and Heroku."
 icon: "database"
 ---
+
+## **Security & Architecture Overview**
+
+Before connecting your data, it is critical to understand how MyQuery interacts with your infrastructure:
+
+- **Schema-Only Access:** MyQuery does **not** ingest or store your raw database records. We only read the metadata (table names, column types, and foreign key relationships) to build a semantic map for the AI.
+- **Encrypted Storage:** All connection credentials and "maps" are encrypted at rest using industry-standard AES-256 encryption.
+- **Whitelisting:** To allow MyQuery to reach your database, you must whitelist our outbound IP addresses in your firewall or cloud security groups (e.g., AWS Security Groups, Azure Firewall).
+
+### **Method A: Connection Parameters**
+
+- **Host/Port/User/Password:** Standard connectivity fields (Default Port: 
+
+  ```
+  5432
+  ```
+
+  ).
+- **Database:** The name of the target database.
+- **Enable SSL:**
+  - _Requirement:_ Essential for almost all cloud-hosted Postgres instances. If your database requires an encrypted tunnel, ensure this is toggled to **True**.
+
+### **Method B: Connection String**
+
+- **Format:** 
+
+  ```
+  postgresql://[user]:[password]@[host]:[port]/[database]?sslmode=[mode]
+  ```
+- **Example:** 
+
+  ```
+  postgresql://admin:pass123@ep-cool-planet-123.us-east-1.aws.neon.tech/neondb?sslmode=require
+  ```

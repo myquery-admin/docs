@@ -1,5 +1,110 @@
 ---
 title: "Microsoft SQL Server"
 icon: "database"
+description: "To connect your Microsoft SQL Server (MSSQL) database to MyQuery, follow these steps and provide the required information for your connection method."
 ---
 
+## **Security & Architecture Overview**
+
+Before connecting your data, it is critical to understand how MyQuery interacts with your infrastructure:
+
+- **Schema-Only Access:** MyQuery does **not** ingest or store your raw database records. We only read the metadata (table names, column types, and foreign key relationships) to build a semantic map for the AI.
+- **Encrypted Storage:** All connection credentials and "maps" are encrypted at rest using industry-standard AES-256 encryption.
+- **Whitelisting:** To allow MyQuery to reach your database, you must whitelist our outbound IP addresses in your firewall or cloud security groups (e.g., AWS Security Groups, Azure Firewall).
+
+### **1. Select Connection Method**
+
+When adding a new SQL Server connection, you can choose between two main tabs:
+
+- **Connection Parameters:** Best for standard setups using individual fields.
+- **Connection String:** Best if you already have a formatted driver string.
+
+---
+
+### **2. Field Definitions**
+
+#### **📡 Connection Parameters (Standard)**
+
+- **Server (Required):** The hostname, IP address, or named instance of your SQL Server.
+  - _Example:_
+
+    ```
+    192.168.1.10
+    ```
+
+    or
+
+    ```
+    db-server.yourcompany.com
+    ```
+
+    or
+
+    ```
+    localhost\SQLEXPRESS
+    ```
+
+    .
+- **Database (Required):** The specific database name within the server that you want the AI to access.
+  - _Example:_
+
+    ```
+    SalesDB
+    ```
+
+    or
+
+    ```
+    Inventory_Production
+    ```
+
+    .
+- **Username (Required):** The database-level user account created for MyQuery.
+  - _Example:_
+
+    ```
+    myquery_user
+    ```
+
+    .
+- **Password (Required):** The password associated with the username above.
+- **Port (Optional):** The network port SQL Server is listening on.
+  - _Default:_
+
+    ```
+    1433
+    ```
+
+    .
+- **Encrypt (Optional):** Set to
+
+  ```
+  true
+  ```
+
+  if your server requires encrypted connections (SSL/TLS).
+  - _Default:_
+
+    ```
+    false
+    ```
+
+    .
+
+#### **🔗 Connection String (Advanced)**
+
+- **Connection String (Required):** A complete driver-specific string containing all credentials.
+  - _Format:_
+
+    ```
+    Server=your_server;Database=your_db;User Id=your_user;Password=your_password;
+    ```
+
+---
+
+### **3. Connection Steps**
+
+1. **Enter Credentials:** Fill in the fields described above based on your chosen method.
+2. **Test Connection:** Click the **Test Connection** button. MyQuery will attempt to reach your server to verify the "Schema-only" access.
+3. **Select Tables:** Once verified, you will be presented with a list of available tables. Check the boxes for the data you want the AI to be able to "read."
+4. **Train AI:** Click **Finish Setup**. The AI will now analyze the blueprint (schema) of your selected tables so it can begin answering your questions!

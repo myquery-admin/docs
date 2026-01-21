@@ -1,7 +1,6 @@
 ---
-title: "SQLite"
-description: "SQLite is an embedded database. Unlike others, it does not run as a service but as a file."
-icon: "database"
+title: "SingleStore"
+description: "A distributed database that handles both transactions and analytics."
 ---
 
 ## **Security & Architecture Overview**
@@ -12,20 +11,21 @@ Before connecting your data, it is critical to understand how MyQuery interacts 
 - **Encrypted Storage:** All connection credentials and "maps" are encrypted at rest using industry-standard AES-256 encryption.
 - **Whitelisting:** To allow MyQuery to reach your database, you must whitelist our outbound IP addresses in your firewall or cloud security groups (e.g., AWS Security Groups, Azure Firewall).
 
-### **Connection Method: File Upload**
+### **Method A: Parameters**
 
-- **Step 1:** Click the **Upload File** button.
-- **Step 2:** Select your 
-
-  ```
-  .sqlite
-  ```
-
-  or 
+- **Host/Port/User/Password:** Standard MySQL-compatible connection (Default Port:
 
   ```
-  .db
+  3306
   ```
 
-  file.
-- **Process:** MyQuery creates a secure, temporary virtual volume to read the schema of the file. Once the schema is indexed, the file logic is maintained for query execution during your session.
+  ).
+- **Database:** Target database name.
+
+### **Method B: Connection String**
+
+- **Example:**
+
+  ```
+  singlestore://user:pass@svc-abc-ddl.aws-virginia-1.db.singlestore.com:3306/mydb
+  ```

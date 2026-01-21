@@ -1,5 +1,43 @@
 ---
 title: "Google BigQuery"
-description: "Description of your new file."
+description: "BigQuery is a serverless data warehouse. Connection is handled via Google's Service Account infrastructure."
 icon: "database"
 ---
+
+## **Security & Architecture Overview**
+
+Before connecting your data, it is critical to understand how MyQuery interacts with your infrastructure:
+
+- **Schema-Only Access:** MyQuery does **not** ingest or store your raw database records. We only read the metadata (table names, column types, and foreign key relationships) to build a semantic map for the AI.
+- **Encrypted Storage:** All connection credentials and "maps" are encrypted at rest using industry-standard AES-256 encryption.
+- **Whitelisting:** To allow MyQuery to reach your database, you must whitelist our outbound IP addresses in your firewall or cloud security groups (e.g., AWS Security Groups, Azure Firewall).
+
+### **Connection Method: Service Account JSON**
+
+- **Step 1: Create Service Account:** In Google Cloud Console, create a service account named 
+
+  ```
+  myquery-access
+  ```
+
+  .
+- **Step 2: Assign Roles:** to read schema Grant:
+
+  ```
+  BigQuery
+  ```
+
+  to run queries: 
+
+  ```
+  BigQuery Job User
+  ```
+- **Step 3: Export Key:** Generate a **JSON Key** and download it.
+- **Step 4: Connect:** Open the JSON file, copy the object, and paste it into the **Credentials JSON** box in MyQuery.
+- **Dataset:** Provide the name of the dataset containing your tables (e.g., 
+
+  ```
+  marketing_insights
+  ```
+
+  ).

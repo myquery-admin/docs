@@ -1,7 +1,6 @@
 ---
-title: "SQLite"
-description: "SQLite is an embedded database. Unlike others, it does not run as a service but as a file."
-icon: "database"
+title: "Odoo ERP"
+description: "Custom integration for Odoo, mapping ERP models to queryable datasets."
 ---
 
 ## **Security & Architecture Overview**
@@ -12,20 +11,12 @@ Before connecting your data, it is critical to understand how MyQuery interacts 
 - **Encrypted Storage:** All connection credentials and "maps" are encrypted at rest using industry-standard AES-256 encryption.
 - **Whitelisting:** To allow MyQuery to reach your database, you must whitelist our outbound IP addresses in your firewall or cloud security groups (e.g., AWS Security Groups, Azure Firewall).
 
-### **Connection Method: File Upload**
+### **Method A: Password Auth**
 
-- **Step 1:** Click the **Upload File** button.
-- **Step 2:** Select your 
+- **URL:** Your Odoo instance address.
+- **Database:** The Odoo system database name.
+- **Username/Password:** Your Odoo login credentials.
 
-  ```
-  .sqlite
-  ```
+### **Method B: API Key Auth**
 
-  or 
-
-  ```
-  .db
-  ```
-
-  file.
-- **Process:** MyQuery creates a secure, temporary virtual volume to read the schema of the file. Once the schema is indexed, the file logic is maintained for query execution during your session.
+- **API Key:** Recommended for automated access. Provide the generated Odoo API key instead of your user password.

@@ -1,5 +1,54 @@
 ---
 title: "Snowflake"
-description: "Description of your new file."
+description: "Snowflake connections require specific details about the virtual computing layer (Warehouse)."
 icon: "database"
 ---
+
+## **Security & Architecture Overview**
+
+Before connecting your data, it is critical to understand how MyQuery interacts with your infrastructure:
+
+- **Schema-Only Access:** MyQuery does **not** ingest or store your raw database records. We only read the metadata (table names, column types, and foreign key relationships) to build a semantic map for the AI.
+- **Encrypted Storage:** All connection credentials and "maps" are encrypted at rest using industry-standard AES-256 encryption.
+- **Whitelisting:** To allow MyQuery to reach your database, you must whitelist our outbound IP addresses in your firewall or cloud security groups (e.g., AWS Security Groups, Azure Firewall).
+
+### **Method A: Password Authentication**
+
+- **Account:** Your Snowflake account identifier.
+  - _Note:_ Do not include
+
+    ```
+    .snowflakecomputing.com
+    ```
+
+    . (Example:
+
+    ```
+    ab12345.us-east-1
+    ```
+
+    ).
+- **Username / Password:** Standard Snowflake user credentials.
+- **Warehouse:** The engine name (e.g.,
+
+  ```
+  COMPUTE_WH
+  ```
+
+  ).
+- **Database & Schema:** The path to find the objects.
+- **Role (Optional):** Define the security context. e.g.,
+
+  ```
+  SYSADMIN
+  ```
+
+  or if your user has multiple roles:
+
+  ```
+  ANALYST
+  ```
+
+### **Method B: Key Pair Authentication**
+
+- **Private Key:** Paste your unencrypted RSA private key in PEM format. This is the most secure method for service-to-service communication.

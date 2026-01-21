@@ -1,6 +1,79 @@
 ---
-title: "MySQL"
-description: "Description of your new file."
+title: "MySQL & MariaDB"
+description: "MySQL and MariaDB are highly compatible. My Query AI treats them similarly but allows for specific driver optimizations."
 icon: "database"
 ---
 
+## **Security & Architecture Overview**
+
+Before connecting your data, it is critical to understand how MyQuery interacts with your infrastructure:
+
+- **Schema-Only Access:** MyQuery does **not** ingest or store your raw database records. We only read the metadata (table names, column types, and foreign key relationships) to build a semantic map for the AI.
+- **Encrypted Storage:** All connection credentials and "maps" are encrypted at rest using industry-standard AES-256 encryption.
+- **Whitelisting:** To allow MyQuery to reach your database, you must whitelist our outbound IP addresses in your firewall or cloud security groups (e.g., AWS Security Groups, Azure Firewall).
+
+\
+**Method A: Connection Parameters (Standard)**
+
+This is the recommended approach for most users. It provides clear fields for each variable.
+
+- **Host:** The resolvable address of the server.
+  - _Example:_ 
+
+    ```
+    db-prod-01.company.com
+    ```
+
+    or 
+
+    ```
+    10.0.0.5
+    ```
+
+    .
+- **Port:** The network port the service is listening on.
+  - _Default:_ 
+
+    ```
+    3306
+    ```
+
+    .
+- **Database:** The specific schema name you want to query.
+  - _Example:_ 
+
+    ```
+    customer_success_v2
+    ```
+
+    .
+- **Username:** A database user with 
+
+  ```
+  SELECT
+  ```
+
+  permissions.
+  - _Example:_ 
+
+    ```
+    myquery_read_only
+    ```
+
+    .
+- **Password:** The associated credential for the user.
+
+### **Method B: Connection String (Advanced)**
+
+Provides a way to pass custom driver flags in a single URI.
+
+- **Format:** 
+
+  ```
+  mysql://[user]:[password]@[host]:[port]/[database]
+  ```
+- **Example:** 
+
+  ```
+  mysql://readonly_user:SecurePass123@db.example.com:3306/production_data?ssl-mode=REQUIRED
+  ```

@@ -1,7 +1,6 @@
 ---
-title: "SQLite"
-description: "SQLite is an embedded database. Unlike others, it does not run as a service but as a file."
-icon: "database"
+title: "Databricks SQL Warehouse"
+description: "Connect to your Databricks Lakehouse architecture to query Delta Lake tables."
 ---
 
 ## **Security & Architecture Overview**
@@ -12,20 +11,21 @@ Before connecting your data, it is critical to understand how MyQuery interacts 
 - **Encrypted Storage:** All connection credentials and "maps" are encrypted at rest using industry-standard AES-256 encryption.
 - **Whitelisting:** To allow MyQuery to reach your database, you must whitelist our outbound IP addresses in your firewall or cloud security groups (e.g., AWS Security Groups, Azure Firewall).
 
-### **Connection Method: File Upload**
+### **Connection Method: HTTP Path**
 
-- **Step 1:** Click the **Upload File** button.
-- **Step 2:** Select your 
-
-  ```
-  .sqlite
-  ```
-
-  or 
+- **Host (Required):** Your Databricks workspace URL (e.g.,
 
   ```
-  .db
+  adb-1234567.8.azuredatabricks.net
   ```
 
-  file.
-- **Process:** MyQuery creates a secure, temporary virtual volume to read the schema of the file. Once the schema is indexed, the file logic is maintained for query execution during your session.
+  ).
+- **HTTP Path (Required):** Found in your SQL Warehouse settings under "Connection Details."
+  - _Example:_
+
+    ```
+    /sql/1.0/warehouses/abc1234567890efg
+    ```
+
+    .
+- **Access Token (Required):** A Personal Access Token (PAT) generated from your Databricks User Settings.

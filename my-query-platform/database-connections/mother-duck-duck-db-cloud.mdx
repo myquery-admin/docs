@@ -1,0 +1,64 @@
+---
+title: "MotherDuck"
+description: "cloud and local versions of DuckDB."
+---
+
+## **Security & Architecture Overview**
+
+Before connecting your data, it is critical to understand how MyQuery interacts with your infrastructure:
+
+- **Schema-Only Access:** MyQuery does **not** ingest or store your raw database records. We only read the metadata (table names, column types, and foreign key relationships) to build a semantic map for the AI.
+- **Encrypted Storage:** All connection credentials and "maps" are encrypted at rest using industry-standard AES-256 encryption.
+- **Whitelisting:** To allow MyQuery to reach your database, you must whitelist our outbound IP addresses in your firewall or cloud security groups (e.g., AWS Security Groups, Azure Firewall).
+
+## **MotherDuck (DuckDB Cloud)**
+
+The serverless cloud version of DuckDB.
+
+### **Connection Method: Token**
+
+- **Connection String (Required):** e.g.,
+
+  ```
+  md:my_database
+  ```
+
+  .
+- **Token (Required):** Your MotherDuck API token.
+- **Schema (Optional):** Specify the schema if not using
+
+  ```
+  main
+  ```
+
+  .
+
+## **DuckDB (Local File)**
+
+High-performance analytical database for local files.
+
+### **Connection Method A: Database File**
+
+- **Upload File:** Securely upload your
+
+  ```
+  .duckdb
+  ```
+
+  file.
+
+### **Connection Method B: Multi-File (CSV/Parquet)**
+
+- **Multiple Files:** Upload a batch of
+
+  ```
+  .csv
+  ```
+
+  or
+
+  ```
+  .parquet
+  ```
+
+  files. MyQuery will create a virtual DuckDB instance, treating each filename as a table.

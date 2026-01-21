@@ -1,7 +1,6 @@
 ---
-title: "SQLite"
-description: "SQLite is an embedded database. Unlike others, it does not run as a service but as a file."
-icon: "database"
+title: "Azure Synapse Analytics"
+description: "Designed for large-scale data warehousing in the Microsoft ecosystem."
 ---
 
 ## **Security & Architecture Overview**
@@ -12,20 +11,27 @@ Before connecting your data, it is critical to understand how MyQuery interacts 
 - **Encrypted Storage:** All connection credentials and "maps" are encrypted at rest using industry-standard AES-256 encryption.
 - **Whitelisting:** To allow MyQuery to reach your database, you must whitelist our outbound IP addresses in your firewall or cloud security groups (e.g., AWS Security Groups, Azure Firewall).
 
-### **Connection Method: File Upload**
+### **Method A: Parameters**
 
-- **Step 1:** Click the **Upload File** button.
-- **Step 2:** Select your 
-
-  ```
-  .sqlite
-  ```
-
-  or 
+- **Server (Required):** The Synapse SQL endpoint (e.g.,
 
   ```
-  .db
+  your-workspace.sql.azuresynapse.net
   ```
 
-  file.
-- **Process:** MyQuery creates a secure, temporary virtual volume to read the schema of the file. Once the schema is indexed, the file logic is maintained for query execution during your session.
+  ).
+- **Database (Required):** The dedicated SQL pool name.
+- **Username/Password:** SQL Authentication credentials.
+
+### **Method B: Connection String**
+
+- **Format:**
+
+  ```
+  Server=tcp:[server],1433;Database=[db];User ID=[user];Password=[pass];Encrypt=true;
+  ```
+- **Example:**
+
+  ```
+  Server=tcp:myworkspace.sql.azuresynapse.net,1433;Database=AnalyticsPool;User ID=sqladmin;Password=Password123!;Encrypt=true;
+  ```

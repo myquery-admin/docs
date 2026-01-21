@@ -57,11 +57,18 @@
               "database/postgresql",
               "database/mongodb",
               "database/sqlite",
-              "database/mariadb",
               "database/ibm-db2",
               "database/amazon-redshift",
               "database/snowflake",
-              "database/bigquery"
+              "database/bigquery",
+              "my-query-platform/database-connections/cockroach-db",
+              "my-query-platform/database-connections/azure-synapse-analytics",
+              "my-query-platform/database-connections/single-store",
+              "my-query-platform/database-connections/databricks-sql-warehouse",
+              "my-query-platform/database-connections/mother-duck-duck-db-cloud",
+              "my-query-platform/database-connections/elasticsearch",
+              "my-query-platform/database-connections/odoo-erp",
+              "my-query-platform/database-connections/click-house"
             ]
           },
           {

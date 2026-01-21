@@ -1,5 +1,63 @@
 ---
 title: "Amazon Redshift"
-description: "Description of your new file."
+description: "Redshift connectivity supports both the traditional Postgres-style connection and the modern AWS Data API."
 icon: "database"
 ---
+
+## **Security & Architecture Overview**
+
+Before connecting your data, it is critical to understand how MyQuery interacts with your infrastructure:
+
+- **Schema-Only Access:** MyQuery does **not** ingest or store your raw database records. We only read the metadata (table names, column types, and foreign key relationships) to build a semantic map for the AI.
+- **Encrypted Storage:** All connection credentials and "maps" are encrypted at rest using industry-standard AES-256 encryption.
+- **Whitelisting:** To allow MyQuery to reach your database, you must whitelist our outbound IP addresses in your firewall or cloud security groups (e.g., AWS Security Groups, Azure Firewall).
+
+### **Method A: Parameters (Provisioned Cluster)**
+
+- **Host:** Your cluster endpoint (looks like):
+
+  ```
+  my-cluster.xyz.us-east-1.redshift.amazonaws.com
+  ```
+- **Port:** Default is 
+
+  ```
+  5439
+  ```
+- **Database:** Typically 
+
+  ```
+  dev
+  ```
+
+  or your custom name.
+- **Schema:** Highly recommended to define this. e.g., 
+
+  ```
+  public
+  ```
+
+  or 
+
+  ```
+  staging
+  ```
+
+### **Method B: AWS Serverless / SDK Access**
+
+Permits connection without exposing your Redshift cluster to the public internet via TCP.
+
+- **Workgroup Name:** For Redshift Serverless users.
+- **AWS Region:** e.g., 
+
+  ```
+  us-west-2
+  ```
+- **AWS Access Key ID:** IAM user with 
+
+  ```
+  AmazonRedshiftFullAccess
+  ```
+
+  or specific Data API permissions.
+- **AWS Secret Access Key:** The associated secret for the IAM user.
