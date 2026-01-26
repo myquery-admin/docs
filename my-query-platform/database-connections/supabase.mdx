@@ -1,6 +1,6 @@
 ---
-title: "MongoDB"
-description: "Since MongoDB is document-based, MyQuery maps "Collections" as virtual tables."
+title: "Supabase"
+description: "Supabase is a modern Postgres-based platform. MyQuery offers a seamless OAuth-based integration."
 ---
 
 ## **Security & Architecture Overview**
@@ -11,25 +11,25 @@ Before connecting your data, it is critical to understand how MyQuery interacts 
 - **Encrypted Storage:** All connection credentials and "maps" are encrypted at rest using industry-standard AES-256 encryption.
 - **Whitelisting:** To allow MyQuery to reach your database, you must whitelist our outbound IP addresses in your firewall or cloud security groups (e.g., AWS Security Groups, Azure Firewall).
 
-### **Connection Method: URI String**
+#### **Method A: OAuth Flow (Recommended)**
 
-MongoDB connections are handled exclusively via the official SRV or Standard connection string format.
+1. Click **Connect Supabase**.
+2. You will be redirected to the Supabase dashboard to authorize MyQuery.
+3. Select the **Project** you wish to connect.
+4. MyQuery automatically securely imports the API keys and database endpoints.
 
-- **Field:** **Connection String**
-- **Format:**
+#### **Method B: Direct Connection**
 
-  ```
-  mongodb+srv://[user]:[password]@[host]/[database]?options
-  ```
-- **Example:**
+Since Supabase is built on PostgreSQL, you can also use the **PostgreSQL** tab with your Supabase "Connection Info" Host ending in:
 
-  ```
-  mongodb+srv://user:pass@cluster0.abcde.mongodb.net/analytics_db?retryWrites=true&w=majority
-  ```
-- **Security Tip:** Ensure your MongoDB user has the
+```
+.supabase.co
+```
 
-  ```
-  read
-  ```
+, Port:
 
-  role specifically on the database mentioned in the string.
+```
+5432
+```
+
+and your database password.

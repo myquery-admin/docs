@@ -1,0 +1,72 @@
+---
+title: "Informix"
+description: "Informix is a high-performance, enterprise-grade relational database known for its reliability in transaction processing."
+---
+
+## **Security & Architecture Overview**
+
+Before connecting your data, it is critical to understand how MyQuery interacts with your infrastructure:
+
+- **Schema-Only Access:** MyQuery does **not** ingest or store your raw database records. We only read the metadata (table names, column types, and foreign key relationships) to build a semantic map for the AI.
+- **Encrypted Storage:** All connection credentials and "maps" are encrypted at rest using industry-standard AES-256 encryption.
+- **Whitelisting:** To allow MyQuery to reach your database, you must whitelist our outbound IP addresses in your firewall or cloud security groups (e.g., AWS Security Groups, Azure Firewall).
+
+#### **Method A: Connection Parameters (Standard)**
+
+This is the most common way to connect to a local or on-premise Informix instance.
+
+- **Host (Required):** The IP address or hostname of the server.
+  - _Example:_
+
+    ```
+    informix.corp.internal
+    ```
+
+    or
+
+    ```
+    10.50.0.12
+    ```
+
+    .
+- **Port (Required):** The service port the database is listening on.
+  - _Default:_
+
+    ```
+    9088
+    ```
+
+    .
+- **Database (Required):** The name of the specific Informix database.
+- **Username / Password (Required):** Your database user credentials.
+- **Server Name (Optional):** The name of the Informix engine instance.
+  - _Default:_
+
+    ```
+    informix
+    ```
+
+    .
+- **Protocol (Optional):** The network protocol used for communication.
+  - _Default:_
+
+    ```
+    onsoctcp
+    ```
+
+    .
+
+#### **Method B: Connection String (Advanced)**
+
+Perfect for passing multiple specific parameters in a single line.
+
+- **Format:**
+
+  ```
+  HOST=[host];SERVICE=[port];SERVER=[server];DATABASE=[db];PROTOCOL=[proto];UID=[user];PWD=[pass]
+  ```
+- **Example:**
+
+  ```
+  HOST=123.456.78.9;SERVICE=9088;SERVER=ol_informix1210;DATABASE=sales_db;PROTOCOL=onsoctcp;UID=admin;PWD=mypassword;
+  ```

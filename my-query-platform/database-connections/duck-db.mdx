@@ -1,0 +1,78 @@
+---
+title: "DuckDB"
+description: "DuckDB is an analytical database designed for lightning-fast queries on local files, widely used in data science and local analytics."
+---
+
+## **Security & Architecture Overview**
+
+Before connecting your data, it is critical to understand how MyQuery interacts with your infrastructure:
+
+- **Schema-Only Access:** MyQuery does **not** ingest or store your raw database records. We only read the metadata (table names, column types, and foreign key relationships) to build a semantic map for the AI.
+- **Encrypted Storage:** All connection credentials and "maps" are encrypted at rest using industry-standard AES-256 encryption.
+- **Whitelisting:** To allow MyQuery to reach your database, you must whitelist our outbound IP addresses in your firewall or cloud security groups (e.g., AWS Security Groups, Azure Firewall).
+
+#### **Method A: Database File (.duckdb)**
+
+Use this if you have an existing DuckDB database file.
+
+1. Navigate to the **DuckDB** tab.
+2. Click **Upload File** under the **Database File** tab.
+3. Upload your
+
+   ```
+   .duckdb
+   ```
+
+   or
+
+   ```
+   .db
+   ```
+
+   file.
+4. MyQuery will mount the file and allow you to select the internal tables for AI training.
+
+#### **Method B: CSV or Parquet Files (Multi-File)**
+
+This unique method allows you to create a virtual database from raw files.
+
+1. Go to the **CSV or Parquet Files** tab.
+2. Select **Upload Files** and choose one or more
+
+   ```
+   .csv
+   ```
+
+   or
+
+   ```
+   .parquet
+   ```
+
+   files.
+3. **How it works:** MyQuery creates a temporary, in-memory DuckDB instance where **each file becomes a table**.
+   - _Example:_ If you upload
+
+     ```
+     customers.csv
+     ```
+
+     and
+
+     ```
+     orders.parquet
+     ```
+
+     , you will have a
+
+     ```
+     customers
+     ```
+
+     table and an
+
+     ```
+     orders
+     ```
+
+     table ready for natural language questioning.

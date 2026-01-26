@@ -56,6 +56,7 @@
               "database/mysql",
               "my-query-platform/database-connections/mongo-db",
               "database/postgresql",
+              "my-query-platform/database-connections/supabase",
               "database/sqlite",
               "database/ibm-db2",
               "database/amazon-redshift",
@@ -66,9 +67,12 @@
               "my-query-platform/database-connections/single-store",
               "my-query-platform/database-connections/databricks-sql-warehouse",
               "my-query-platform/database-connections/mother-duck-duck-db-cloud",
+              "my-query-platform/database-connections/duck-db",
               "my-query-platform/database-connections/elasticsearch",
               "my-query-platform/database-connections/odoo-erp",
-              "my-query-platform/database-connections/click-house"
+              "my-query-platform/database-connections/click-house",
+              "my-query-platform/database-connections/google-sheets",
+              "my-query-platform/database-connections/informix"
             ]
           },
           {

@@ -3,17 +3,25 @@ title: "ClickHouse"
 description: "A high-performance columnar OLAP database, ideal for real-time analytics."
 ---
 
+## **Security & Architecture Overview**
+
+Before connecting your data, it is critical to understand how MyQuery interacts with your infrastructure:
+
+- **Schema-Only Access:** MyQuery does **not** ingest or store your raw database records. We only read the metadata (table names, column types, and foreign key relationships) to build a semantic map for the AI.
+- **Encrypted Storage:** All connection credentials and "maps" are encrypted at rest using industry-standard AES-256 encryption.
+- **Whitelisting:** To allow MyQuery to reach your database, you must whitelist our outbound IP addresses in your firewall or cloud security groups (e.g., AWS Security Groups, Azure Firewall).
+
 ### **Connection Method: Node.js Driver**
 
 - **URL (Required):** The full HTTP/HTTPS endpoint.
-  - _Example:_ 
+  - _Example:_
 
     ```
     https://abcdef.us-east-1.aws.clickhouse.cloud:8443
     ```
 
     .
-- **Username (Required):** Usually 
+- **Username (Required):** Usually
 
   ```
   default

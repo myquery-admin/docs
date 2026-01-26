@@ -1,6 +1,6 @@
 ---
-title: "MongoDB"
-description: "Since MongoDB is document-based, MyQuery maps "Collections" as virtual tables."
+title: "Google Sheets"
+description: "Turn your spreadsheets into queryable relational tables."
 ---
 
 ## **Security & Architecture Overview**
@@ -11,25 +11,10 @@ Before connecting your data, it is critical to understand how MyQuery interacts 
 - **Encrypted Storage:** All connection credentials and "maps" are encrypted at rest using industry-standard AES-256 encryption.
 - **Whitelisting:** To allow MyQuery to reach your database, you must whitelist our outbound IP addresses in your firewall or cloud security groups (e.g., AWS Security Groups, Azure Firewall).
 
-### **Connection Method: URI String**
+**Setup Steps:**
 
-MongoDB connections are handled exclusively via the official SRV or Standard connection string format.
-
-- **Field:** **Connection String**
-- **Format:**
-
-  ```
-  mongodb+srv://[user]:[password]@[host]/[database]?options
-  ```
-- **Example:**
-
-  ```
-  mongodb+srv://user:pass@cluster0.abcde.mongodb.net/analytics_db?retryWrites=true&w=majority
-  ```
-- **Security Tip:** Ensure your MongoDB user has the
-
-  ```
-  read
-  ```
-
-  role specifically on the database mentioned in the string.
+1. Click **Connect Google Sheets**.
+2. Authorize MyQuery to access your Google Drive/Sheets.
+3. **File Selection:** Use the file picker to find the specific Spreadsheet.
+4. **Sheet Selection:** Define which "Sheet" (tab) within the file should be treated as the table.
+5. **Headers:** Ensure your first row contains the column names. MyQuery will automatically map these names as table columns.
