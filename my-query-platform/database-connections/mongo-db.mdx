@@ -1,0 +1,27 @@
+---
+title: "MongoDB"
+description: "Since MongoDB is document-based, MyQuery maps "Collections" as virtual tables."
+---
+
+### **Connection Method: URI String**
+
+MongoDB connections are handled exclusively via the official SRV or Standard connection string format.
+
+- **Field:** **Connection String**
+- **Format:** 
+
+  ```
+  mongodb+srv://[user]:[password]@[host]/[database]?options
+  ```
+- **Example:** 
+
+  ```
+  mongodb+srv://user:pass@cluster0.abcde.mongodb.net/analytics_db?retryWrites=true&w=majority
+  ```
+- **Security Tip:** Ensure your MongoDB user has the 
+
+  ```
+  read
+  ```
+
+  role specifically on the database mentioned in the string.
